@@ -1,0 +1,14 @@
+const express = require('express');
+const User = require('../models/User');
+
+const router = express.Router();
+
+// Ruta para obtener todos los users
+router.get('/users', async (req, res) => {
+  const users = await User.findAll();
+  res.json(users);
+});
+
+// Otras rutas CRUD...
+
+module.exports = router;
