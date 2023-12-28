@@ -1,8 +1,14 @@
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('nombre_de_tu_base_de_datos', 'usuario', 'contraseña', {
-  host: 'localhost',
-  dialect: 'mariadb',
+// Cargar variables de entorno desde .env
+require('dotenv').config();
+
+const sequelize = new Sequelize(
+  process.env.DB_DATABASE,
+  process.env.DB_DB_USERNAME,
+  process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
+    dialect: process.env.DB_CONNECTION,
 });
 
 module.exports = sequelize;
