@@ -1,9 +1,9 @@
 const express = require('express');
 const sequelize = require('../database/db');
-const usersController = require('../controller/UserController');
+const usersController = require('../controllers/UserController');
 
 // Cargar variables de entorno desde .env
-require('dotenv').config(); 
+require('dotenv').config();
 
 
 const app = express();
